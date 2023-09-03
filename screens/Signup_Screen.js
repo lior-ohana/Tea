@@ -17,17 +17,17 @@ import LoginScreen from "./Login_Screen";
 import { windowHeight, windowWidth } from "../utils/Dimentions";
 import { authUser, createUser } from "../utils/auth";
 
-import { db } from "../firebase-config.js";
-import {
-  getDoc,
-  where,
-  collection,
-  query,
-  and,
-  getDocs,
-  doc,
-  addDoc,
-} from "firebase/firestore";
+// import { db } from "../firebase-config.js";
+// import {
+//   getDoc,
+//   where,
+//   collection,
+//   query,
+//   and,
+//   getDocs,
+//   doc,
+//   addDoc,
+// } from "firebase/firestore";
 
 const SignupScreen = ({ navigation }) => {
   const [fullName, setFullName] = useState("");
@@ -35,7 +35,7 @@ const SignupScreen = ({ navigation }) => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [userType, setUserType] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(null);
   const [message, setMessage] = useState("");
 
   const checkValidations = () => {
@@ -108,8 +108,8 @@ const SignupScreen = ({ navigation }) => {
         autoCorrect={false}
       />
       <FormInput
-        lableValue={date}
-        onChangeText={(userDate) => setDate(new Date(userDate))}
+        lableValue={date && String(date)}
+        onChangeText={(userDate) => setDate(userDate)}
         placeholderText="Date Of Birth (DD/MM/YYYY)"
         iconType="calendar"
       />

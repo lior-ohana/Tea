@@ -5,19 +5,18 @@ import FormButton from "../components/FormButton";
 import FormInput from "../components/FormInput";
 import SocialButton from "../components/SocialButton";
 
-// import { db } from "../firebase-config.js";
-// import {
-//   getDoc,
-//   where,
-//   collection,
-//   query,
-//   and,
-//   getDocs, 
-// } from "firebase/firestore";
-import { firebase } from "@react-native-firebase/auth";
+import { db } from "../firebase-config.js";
+import {
+  getDoc,
+  where,
+  collection,
+  query,
+  and,
+  getDocs, 
+} from "firebase/firestore";
+// import { firebase } from "@react-native-firebase/auth";
 
 const LoginScreen = ({ navigation }) => {
-  return <></>
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
